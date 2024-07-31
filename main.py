@@ -207,8 +207,10 @@ while True:
     print("Defina as funções de transição:")
     for estado in estados:
         for simbolo in alfabeto:
-            print(f"\tPara o estado {estado} com o símbolo '{
-                  simbolo}', informe os estados de destino separados por espaço (ou deixe vazio para nenhuma transição):")
+            #print(f"\tPara o estado {estado} com o símbolo '{
+                  #simbolo}', informe os estados de destino separados por espaço (ou deixe vazio para nenhuma transição):")
+            print(f"\t {simbolo}")
+            print(f"{estado}\t----->\t", end="")
             transicoes = input().split()
             if tipo_automato == 1:
                 funcoes_transicao[(estado, simbolo)
