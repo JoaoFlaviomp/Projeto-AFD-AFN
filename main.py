@@ -125,7 +125,7 @@ def converter_afnd_para_afd(estados, alfabeto, funcoes_transicao, estado_inicial
     estado_inicial_afd = str(novo_estado_inicial)
 
     return estados_afd, alfabeto, funcoes_transicao_afd, estado_inicial_afd, estados_aceitacao_afd
-
+'''
 # Função para minimizar AFD
 
 
@@ -175,11 +175,11 @@ def minimizar_afd(estados, alfabeto, funcoes_transicao, estado_inicial, estados_
                         novo_estado, simbolo)] = destino_particao
 
     return novo_estados, alfabeto, novas_funcoes_transicao, novo_estado_inicial, novos_estados_aceitacao
-
+'''
 
 while True:
     # Menu principal para seleção do tipo de autômato
-    print("Escolha o tipo de autômato (1 para AFD, 2 para AFND, 3 para Converter AFND para AFD, 4 para Minimizar AFD, 5 para Sair): ", end="")
+    print("Escolha o tipo de autômato (1 para AFD, 2 para AFND, 3 para Converter AFND para AFD, 4 para Minimizar AFD, 5 para Sair):\n", end="")
     tipo_automato = int(input())
 
     if tipo_automato == 5:
@@ -230,6 +230,7 @@ while True:
             estados, alfabeto, funcoes_transicao, estado_inicial, estados_aceitacao)
         gerar_imagem_afd(estados_afd, alfabeto_afd, funcoes_transicao_afd,
                          estado_inicial_afd, estados_aceitacao_afd)
+        '''
     elif tipo_automato == 4:
         estados_min, alfabeto_min, funcoes_transicao_min, estado_inicial_min, estados_aceitacao_min = minimizar_afd(
             estados, alfabeto, funcoes_transicao, estado_inicial, estados_aceitacao)
@@ -238,6 +239,7 @@ while True:
                              estado_inicial_min, estados_aceitacao_min)
         else:
             print("Erro ao minimizar: estado inicial não encontrado.")
+            '''
 
     # Loop de reconhecimento
     while tipo_automato in [1, 2]:
