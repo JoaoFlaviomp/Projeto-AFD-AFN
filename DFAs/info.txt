@@ -1,3 +1,0 @@
-Estado inicial: q0
-Estados finais: q2 q3
-Alfabeto: a b
