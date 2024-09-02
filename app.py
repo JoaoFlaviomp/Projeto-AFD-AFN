@@ -72,8 +72,7 @@ def gerar_imagem_afd(estados, alfabeto, transicoes, estado_inicial, estados_fina
         if grupo_estado and grupo_destino:
             dot.edge(grupo_estado, grupo_destino, label=simbolo)
         else:
-            print(f"Erro: Estado '{estado}' ou destino '{
-                  ', '.join(destino)}' não encontrado nos grupos de estados.")
+            print(f"Erro: Estado '{estado}' ou destino '{', '.join(destino)}' não encontrado nos grupos de estados.")
 
     # Adicionar nó inicial e conectar ao grupo do estado inicial
     grupo_inicial = estado_para_grupo.get(estado_inicial)
@@ -81,9 +80,8 @@ def gerar_imagem_afd(estados, alfabeto, transicoes, estado_inicial, estados_fina
         dot.node('start', shape='point')
         dot.edge('start', grupo_inicial)
     else:
-        print(f"Erro: Estado inicial '{
-              estado_inicial}' não encontrado nos grupos de estados.")
-
+       print(f"Erro: Estado inicial '{estado_inicial}' não encontrado nos grupos de estados.")
+       
     return dot
 
 # Função para simular a aceitação de uma palavra no AFD
@@ -477,11 +475,9 @@ def main():
                 aceita = simular_afd_com_palavra(
                     estados, alfabeto, transicoes, estado_inicial, estados_finais, palavra_teste)
                 if aceita:
-                    st.write(f"A palavra '{
-                             palavra_teste}' foi **aceita** pelo AFD.")
+                    st.write(f"A palavra '{palavra_teste}' foi **aceita** pelo AFD.")
                 else:
-                    st.write(f"A palavra '{
-                             palavra_teste}' foi **rejeitada** pelo AFD.")
+                    st.write(f"A palavra '{palavra_teste}' foi **rejeitada** pelo AFD.")
             else:
                 st.write(
                     "Por favor, defina as transições do AFD e insira uma palavra para testar.")
@@ -529,11 +525,9 @@ def main():
                 aceita = simular_afnd(estados, alfabeto, funcoes_transicao,
                                       estado_inicial, estados_aceitacao, palavra_teste_afnd)
                 if aceita:
-                    st.write(f"A palavra '{
-                             palavra_teste_afnd}' foi **aceita** pelo AFND.")
+                    st.write(f"A palavra '{palavra_teste}' foi **aceita** pelo AFND.")
                 else:
-                    st.write(f"A palavra '{
-                             palavra_teste_afnd}' foi **rejeitada** pelo AFND.")
+                    st.write(f"A palavra '{palavra_teste}' foi **rejeitada** pelo AFND.")
             else:
                 st.write(
                     "Por favor, defina as transições do AFND e insira uma palavra para testar.")
@@ -546,8 +540,7 @@ def main():
             mt_incremento.carregar_palavra(palavra)
             resultado = mt_incremento.executar()
             if resultado:
-                st.write(f"Resultado do incremento: {
-                         mt_incremento.obter_resultado()}")
+                st.write(f"Resultado do incremento: {mt_incremento.obter_resultado()}")
             else:
                 st.write(
                     f"Erro ao executar a Máquina de Turing para a palavra '{palavra}'.")
